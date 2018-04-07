@@ -30,4 +30,10 @@ Route::get('/about', function() {
     return view('pages.about');
 });
 
+// Get request for a user : laravelapp.me/user/Anyname
+// will return Hello Anyname
+Route::get('/user/{id}', function($id) {
+    return 'Hello '.$id;
+});
+
 
