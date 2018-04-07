@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    //return view('Hello You!!!');
+    return 'Hello You!!!';
+});
+
+// to submit a for to route
+//Route::post('/hello', function () {
+    //return view('Hello You!!!');
+  //  return 'Hello You!!!';
+//});
+
+
