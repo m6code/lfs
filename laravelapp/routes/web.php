@@ -26,6 +26,7 @@ Route::get('/hello', function () {
   //  return 'Hello You!!!';
 //});
 
+// To load a page from the resources/views/pages/ folder
 Route::get('/about', function() {
     return view('pages.about');
 });
