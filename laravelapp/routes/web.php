@@ -26,4 +26,8 @@ Route::get('/hello', function () {
   //  return 'Hello You!!!';
 //});
 
+Route::get('/about', function() {
+    return view('pages.about');
+});
+
 
