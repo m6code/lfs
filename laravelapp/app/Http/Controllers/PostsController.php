@@ -17,8 +17,9 @@ class PostsController extends Controller
     {
         // $posts = Post::all(); // Select everything from the post table
         // return Post::where('title', 'Post Two')->get(); // Return a specific post.
-        $posts = DB::select('SELECT * FROM posts');
-        //$posts = Post::orderBy('created_at', 'desc')->get(); //Order the post by date created in decending order
+        // $posts = DB::select('SELECT * FROM posts');
+
+        $posts = Post::orderBy('created_at', 'desc')->take(1)->get(); // Get only 1 post
         return view('posts.index')->with('posts', $posts);
     }
 
