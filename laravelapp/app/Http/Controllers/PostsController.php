@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 class PostsController extends Controller
 {
@@ -14,8 +15,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        
-        $posts = Post::orderBy('created_at', 'desc')->get(); //Order the post by date created in decending order
+        // $posts = Post::all(); // Select everything from the post table
+        // return Post::where('title', 'Post Two')->get(); // Return a specific post.
+        $posts = DB::select('SELECT * FROM posts');
+        //$posts = Post::orderBy('created_at', 'desc')->get(); //Order the post by date created in decending order
         return view('posts.index')->with('posts', $posts);
     }
 
