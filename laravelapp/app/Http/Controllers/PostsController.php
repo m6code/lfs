@@ -49,7 +49,8 @@ class PostsController extends Controller
     public function show($id)
     {
         // Fetch data from db using id
-        return Post::find($id);
+        $post = Post::find($id);
+        return view('posts.show')->with('post',$post);
     }
 
     /**
