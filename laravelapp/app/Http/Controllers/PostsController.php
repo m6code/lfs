@@ -15,7 +15,7 @@ class PostsController extends Controller
     public function index()
     {
         
-        $posts = Post::all(); //Return all the posts using eloquent
+        $posts = Post::orderBy('created_at', 'desc')->get(); //Order the post by date created in decending order
         return view('posts.index')->with('posts', $posts);
     }
 
