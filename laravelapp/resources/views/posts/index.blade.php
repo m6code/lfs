@@ -9,6 +9,7 @@
                 <small>On {{$post->created_at}}</small>
             </div>
         @endforeach
+        {{$posts->links()}}
     @else
         <p>No Posts Found</p>
     @endif

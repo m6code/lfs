@@ -19,7 +19,7 @@ class PostsController extends Controller
         // return Post::where('title', 'Post Two')->get(); // Return a specific post.
         // $posts = DB::select('SELECT * FROM posts');
 
-        $posts = Post::orderBy('created_at', 'desc')->take(1)->get(); // Get only 1 post
+        $posts = Post::orderBy('created_at', 'desc')->paginate(1); // Paginate pages
         return view('posts.index')->with('posts', $posts);
     }
 
